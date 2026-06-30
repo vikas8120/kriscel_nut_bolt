@@ -18,7 +18,7 @@ export function Gallery({ images, className = '' }) {
               alt={image.alt}
               loading="lazy"
               decoding="async"
-              className={`h-full w-full cursor-zoom-in object-cover transition duration-700 ease-out group-hover:scale-110 ${image.height ?? 'h-72'}`}
+              className={`h-full w-full cursor-zoom-in object-cover transition duration-700 ease-out group-hover:scale-110 ${image.height ?? 'h-64 sm:h-72'}`}
             />
             {image.caption ? (
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/65 to-transparent p-5 text-sm text-white">

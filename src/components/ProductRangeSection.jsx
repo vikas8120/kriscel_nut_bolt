@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 
@@ -31,7 +31,7 @@ function FlipCard({ item }) {
 
   return (
     <motion.div
-      className="group/card relative h-[21rem] w-full [perspective:1600px] sm:h-[24rem] lg:h-[26rem]"
+      className="group/card relative h-[21rem] w-full [perspective:1600px] sm:h-[24rem] lg:h-[26rem] lg:w-[31rem] lg:flex-none"
       whileHover={{ y: -4 }}
       transition={{ duration: 0.2 }}
     >
@@ -106,6 +106,16 @@ function FlipCard({ item }) {
 }
 
 export function ProductRangeSection() {
+  const [isDesktop, setIsDesktop] = useState(false)
+
+  useEffect(() => {
+    const media = window.matchMedia('(min-width: 1024px)')
+    const update = () => setIsDesktop(media.matches)
+    update()
+    media.addEventListener('change', update)
+    return () => media.removeEventListener('change', update)
+  }, [])
+
   return (
     <section className="relative w-full overflow-hidden py-10 sm:py-14 lg:py-16">
       <div className="absolute inset-0 bg-[url('/products-range-bg.jpeg')] bg-cover bg-center bg-no-repeat" />
@@ -122,7 +132,11 @@ export function ProductRangeSection() {
           </h2>
         </div>
 
-        <div className="mt-8 grid gap-5 sm:mt-10 md:grid-cols-3">
+        <div
+          className={`mt-8 grid gap-5 sm:mt-10 ${
+            isDesktop ? 'lg:flex lg:w-max lg:gap-5' : 'md:grid-cols-3'
+          }`}
+        >
           {rangeItems.map((item) => (
             <FlipCard key={item.title} item={item} />
           ))}

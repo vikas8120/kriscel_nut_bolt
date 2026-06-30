@@ -241,6 +241,8 @@ const heroGallery = [
 
 export function Home() {
   const sectionRef = useGSAP(({ gsap, scope }) => {
+    if (!window.matchMedia('(min-width: 1024px)').matches) return
+
     gsap.registerPlugin(ScrollTrigger)
     const track = scope.querySelector('[data-track]')
     const panels = gsap.utils.toArray('[data-panel]', track)
@@ -273,49 +275,49 @@ export function Home() {
 
   return (
     <div className="page-shell pb-16">
-      <section className="relative h-screen w-full overflow-hidden" style={sectionStyle(themeStyles.hero)}>
+      <section className="relative min-h-[100svh] w-full overflow-hidden" style={sectionStyle(themeStyles.hero)}>
         <video
           autoPlay
           loop
           muted
           playsInline
-          className="absolute inset-0 h-full w-full object-cover"
+          className="pointer-events-none absolute inset-0 h-full w-full object-cover object-center"
         >
           <source src="/video/Steel_billet_to_nut_assembly_202606291250.mp4" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_30%),linear-gradient(180deg,rgba(11,10,14,0.18),rgba(11,10,14,0.72))]" />
         <div className="absolute inset-0 flex items-end">
-          <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-6 px-4 pb-16 sm:px-6 lg:px-8 lg:pb-20">
+          <div className="mx-auto flex w-full max-w-7xl flex-col items-start gap-4 px-4 pb-8 pt-20 sm:gap-6 sm:px-6 sm:pb-16 lg:px-8 lg:pb-20">
             <img
               src="/kriscel-logo.png"
               alt="Kriscel Nut Bolt logo"
-              className="h-28 w-28 object-contain drop-shadow-[0_14px_30px_rgba(0,0,0,0.22)] sm:h-32 sm:w-32 lg:h-36 lg:w-36"
+              className="h-20 w-20 object-contain drop-shadow-[0_14px_30px_rgba(0,0,0,0.22)] sm:h-32 sm:w-32 lg:h-36 lg:w-36"
               loading="eager"
               decoding="async"
             />
             <div className="max-w-4xl">
-              <p className="text-[0.7rem] font-semibold uppercase tracking-[0.42em] text-white/72 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+              <p className="text-[0.6rem] font-semibold uppercase tracking-[0.28em] text-white/72 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)] sm:text-[0.7rem] sm:tracking-[0.42em]">
                 Kriscel Nut Bolt
               </p>
-              <h1 className="mt-3 font-display text-4xl tracking-[-0.05em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] sm:text-5xl lg:text-6xl">
+              <h1 className="mt-3 max-w-[12ch] font-display text-3xl tracking-[-0.05em] text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)] sm:max-w-none sm:text-5xl lg:text-6xl">
                 Precision That Holds the World Together
               </h1>
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-white/82 drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)] sm:text-base">
+              <p className="mt-4 max-w-2xl text-sm leading-6 text-white/82 drop-shadow-[0_2px_12px_rgba(0,0,0,0.25)] sm:text-base sm:leading-7">
                 Premium fasteners, precision-machined components, and engineered confidence for
                 every critical assembly.
               </p>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
               <Link
                 to="/products"
-                className="rounded-full bg-[#ECE7D1] px-5 py-3 text-sm font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238]"
+                className="inline-flex items-center justify-center rounded-full bg-[#ECE7D1] px-5 py-3 text-sm font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238]"
               >
                 Explore Products
               </Link>
               <Link
                 to="/contact"
-                className="rounded-full border border-white/20 bg-white/6 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/12"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/6 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/12"
               >
                 Request Quote
               </Link>

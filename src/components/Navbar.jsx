@@ -37,9 +37,9 @@ export function Navbar() {
           : 'border-transparent bg-[#8E977D]/82 backdrop-blur-md'
       }`}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="h-12 w-12 overflow-hidden rounded-2xl border border-[#ECE7D1]/40 bg-[#ECE7D1]/12 shadow-[0_10px_24px_rgba(0,0,0,0.14)]">
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-3 sm:gap-4 sm:px-6 sm:py-4 lg:px-8">
+        <Link to="/" className="flex min-w-0 items-center gap-2 sm:gap-3">
+          <div className="h-10 w-10 shrink-0 overflow-hidden rounded-2xl border border-[#ECE7D1]/40 bg-[#ECE7D1]/12 shadow-[0_10px_24px_rgba(0,0,0,0.14)] sm:h-12 sm:w-12">
             <img
               src="/kriscel-logo.png"
               alt="Kriscel Nut Bolt logo"
@@ -48,11 +48,11 @@ export function Navbar() {
               decoding="async"
             />
           </div>
-          <div>
-            <p className="text-[0.65rem] font-semibold uppercase tracking-[0.36em] text-[#ECE7D1]/74">
+          <div className="min-w-0">
+            <p className="truncate text-[0.58rem] font-semibold uppercase tracking-[0.24em] text-[#ECE7D1]/74 sm:text-[0.65rem] sm:tracking-[0.36em]">
               Kriscel Nut Bolt
             </p>
-            <p className="text-sm font-semibold text-[#F8F4E8]">Engineering Precision</p>
+            <p className="hidden text-sm font-semibold text-[#F8F4E8] sm:block">Engineering Precision</p>
           </div>
         </Link>
 
@@ -74,7 +74,7 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
           <Link
             to="/products"
             className="hidden rounded-full border border-[#ECE7D1]/35 px-4 py-2 text-sm font-semibold text-[#F8F4E8] transition hover:border-[#ECE7D1] hover:bg-[#ECE7D1]/10 sm:inline-flex"
@@ -83,17 +83,22 @@ export function Navbar() {
           </Link>
           <Link
             to="/contact"
-            className="rounded-full bg-[#ECE7D1] px-4 py-2 text-sm font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238]"
+            className="rounded-full bg-[#ECE7D1] px-3 py-2 text-[0.8rem] font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238] sm:px-4 sm:text-sm"
           >
             Request Quote
           </Link>
           <button
             type="button"
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-full border border-[#ECE7D1]/35 bg-[#8A7650]/75 text-[#F8F4E8] lg:hidden"
+            className="relative inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#ECE7D1]/35 bg-[#8A7650]/75 text-[#F8F4E8] lg:hidden"
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle navigation"
           >
-            <span className="text-lg">Menu</span>
+            <span className="flex flex-col gap-1.5" aria-hidden="true">
+              <span className="block h-0.5 w-4 rounded-full bg-current" />
+              <span className="block h-0.5 w-4 rounded-full bg-current" />
+              <span className="block h-0.5 w-4 rounded-full bg-current" />
+            </span>
+            <span className="sr-only">Menu</span>
             {favorites.length || compare.length ? (
               <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-[#ECE7D1] px-1 text-[10px] font-bold text-[#8A7650]">
                 {favorites.length + compare.length}

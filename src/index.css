@@ -36,18 +36,21 @@
 
 html {
   scroll-behavior: auto;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-width: 320px;
+  width: 100%;
   background:
     radial-gradient(circle at top, rgba(var(--sand-rgb), 0.32), transparent 28%),
     radial-gradient(circle at 85% 15%, rgba(var(--olive-rgb), 0.22), transparent 20%),
     linear-gradient(180deg, #f6f1df 0%, #efe7ce 55%, #e6dcc0 100%);
   color: var(--text-strong);
   font-family: var(--font-body);
-  overflow-x: hidden;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -92,6 +95,8 @@ button {
 
 #root {
   min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
 }
 
 main [class*='border-slate-200'],
