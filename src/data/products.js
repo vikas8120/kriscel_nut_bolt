@@ -41,8 +41,8 @@ export const products = [
     features: ['Low burr', 'Thread gauged', 'Batch traceable'],
     gallery: [
       '/images/hex-nut.png',
-      'https://images.unsplash.com/photo-1610992015732-2449b0de0a86?auto=format&fit=crop&w=1200&q=80',
-      'https://images.unsplash.com/photo-1541532713592-79a0317b6b77?auto=format&fit=crop&w=1200&q=80',
+      '/images/hex-nut-gallery-2.png',
+      '/images/hex-nut-gallery-3.png',
     ],
     specs: {
       'Thread Class': '6H / 6G',
@@ -170,7 +170,7 @@ export const products = [
     applications: ['General Assembly', 'Support Hardware', 'Subsystems'],
     features: ['Accurate OD/ID', 'Smooth edge', 'Ready to kit'],
     gallery: [
-      '/images/hex-nut.png',
+      '/images/washers.png',
       'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=1200&q=80',
       'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&w=1200&q=80',
     ],

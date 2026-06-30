@@ -35,7 +35,7 @@ export const industries = [
     slug: 'agriculture',
     name: 'Agriculture',
     image:
-      'https://images.unsplash.com/photo-1416879595882-3373a0480b5b?auto=format&fit=crop&w=1200&q=80',
+      '/images/agriculture_tractor.png',
     description:
       'Field-ready fasteners for tractors, harvesters, and seasonal maintenance cycles.',
   },

@@ -204,8 +204,7 @@ const processPanels = [
   },
   {
     title: 'Surface Finishing',
-    image:
-      'https://images.unsplash.com/photo-1565087157823-6a4e7a9a3e4a?auto=format&fit=crop&w=1200&q=80',
+    image: '/images/surface-finishing.png',
     text: 'Premium protective coatings with a polished industrial look.',
   },
   {
@@ -368,13 +367,13 @@ export function Home() {
                 description="A horizontal GSAP scroll brings the manufacturing story to life without feeling busy."
               />
             </div>
-            <div ref={sectionRef} className="relative mt-6 h-[72vh]">
+            <div ref={sectionRef} className="relative mt-6 h-[60vh] md:h-[72vh] w-full overflow-x-auto snap-x snap-mandatory lg:overflow-visible [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
               <div data-track className="flex h-full w-max gap-5 px-6 pb-6">
                 {processPanels.map((panel, index) => (
                   <article
                     key={panel.title}
                     data-panel
-                    className="group relative h-full w-[84vw] max-w-[33rem] overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 md:w-[32rem]"
+                    className="group relative h-full w-[84vw] max-w-[33rem] shrink-0 snap-center overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-100 md:w-[32rem]"
                   >
                     <img
                       src={panel.image}

@@ -19,7 +19,7 @@ const rangeItems = [
   },
   {
     title: 'Washers',
-    image: '/images/studs.png',
+    image: '/images/washer-single.png',
     description:
       'Load-spreading hardware and support components designed for clean seating, stability, and assembly consistency.',
     href: '/products/washers',

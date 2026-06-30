@@ -31,7 +31,7 @@ export function Navbar() {
       initial={{ opacity: 0, y: -24 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className={`sticky top-0 z-50 border-b transition-all duration-300 ${
+      className={`sticky top-0 z-50 w-full border-b transition-all duration-300 ${
         scrolled
           ? 'border-[#8A7650]/25 bg-[#8A7650]/90 shadow-[0_18px_60px_rgba(95,82,56,0.22)] backdrop-blur-xl'
           : 'border-transparent bg-[#8E977D]/82 backdrop-blur-md'
@@ -83,7 +83,7 @@ export function Navbar() {
           </Link>
           <Link
             to="/contact"
-            className="rounded-full bg-[#ECE7D1] px-3 py-2 text-[0.8rem] font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238] sm:px-4 sm:text-sm"
+            className="shrink-0 whitespace-nowrap rounded-full bg-[#ECE7D1] px-3 py-2 text-[0.8rem] font-semibold text-[#8A7650] transition hover:bg-[#DBCEA5] hover:text-[#5F5238] sm:px-4 sm:text-sm"
           >
             Request Quote
           </Link>
